@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { AuthService } from '../../services';
 
 @Component({
   selector: 'ff-login',
@@ -9,7 +12,15 @@ export class LoginComponent {
   username: string;
   password: string;
 
+  constructor(private authService: AuthService, private router: Router) { }
+
   login() {
-    console.log(this.username, this.password);
+    this.authService.login(this.username, this.password)
+    .then(result => {
+      console.log('Right username and password!');
+      this.router.navigate(['']);
+    }).catch(error => {
+      console.log('TODO... Wrong username or password!');
+    });
   }
 }
