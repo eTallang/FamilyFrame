@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,500');
+
+$color-top: #11bb7f;
+$color-bottom: #5a739b;
+
+html, body {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    width: 100%;
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#11bb7f+0,5a739b+100 */
+    background: $color-top; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, $color-top 0%, $color-bottom 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, $color-top 0%,$color-bottom 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, $color-top 0%,$color-bottom 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-top', endColorstr='$color-bottom',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
