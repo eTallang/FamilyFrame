@@ -6,6 +6,11 @@ $input-background: #116c68;
 // $button-background: #37457c;
 $button-background: #7c59a9;
 
+p {
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+
 input {
     box-shadow: $shadow-close;
     border-radius: 2px;
