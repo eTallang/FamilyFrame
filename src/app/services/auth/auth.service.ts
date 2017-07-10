@@ -1,20 +1,22 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import * as firebase from 'firebase';
 
 @Injectable()
 export class AuthService {
   isSignedIn = false;
 
-  constructor() {
+  constructor(private router: Router) {
     this.observeUserState();
   }
 
-  login(username: string, password: string): firebase.Promise<any> {
+  signIn(username: string, password: string): firebase.Promise<any> {
     return firebase.auth().signInWithEmailAndPassword(username, password);
   }
 
-  logout(): firebase.Promise<any> {
-    return firebase.auth().signOut();
+  signOut() {
+    firebase.auth().signOut();
+    this.router.navigate(['/login']);
   }
 
   observeUserState() {

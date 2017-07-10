@@ -14,8 +14,8 @@ export class LoginComponent {
 
   constructor(private authService: AuthService, private router: Router) { }
 
-  login() {
-    this.authService.login(this.username, this.password)
+  signIn() {
+    this.authService.signIn(this.username, this.password)
     .then(result => {
       console.log('Right username and password!');
       this.router.navigate(['']);

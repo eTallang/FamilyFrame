@@ -6,11 +6,11 @@
     fxLayout="column"
     fxLayoutGap="8px"
     #loginForm="ngForm"
-    (ngSubmit)="login()">
+    (ngSubmit)="signIn()">
     <p fxFlexAlign="center">Sign in to begin your journey...</p>
     <input type="email" placeholder="Username" spellcheck="false" required [(ngModel)]="username" name="email">
     <input type="password" placeholder="Password" required [(ngModel)]="password" name="password">
-    <button type="submit" *ngIf="loginForm.form.valid">Logg inn</button>
+    <button type="submit" *ngIf="loginForm.form.valid">Sign in</button>
   </form>
   <div fxFlex></div>
 </div>
