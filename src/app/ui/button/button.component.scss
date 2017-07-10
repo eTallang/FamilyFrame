@@ -9,12 +9,12 @@ button {
     border: none;
     background: $button-background;
     border-radius: 2px;
-    padding: 14px;
+    padding: 14px 20px;
     color: white;
     box-shadow: $shadow-close;
     transition: $animation-short;
     font-weight: 300;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-family: "Raleway", sans-serif;
 }
 
