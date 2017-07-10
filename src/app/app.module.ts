@@ -5,8 +5,16 @@ import { FormsModule } from '@angular/forms';
 import * as firebase from 'firebase';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent, LoginComponent, DashboardComponent } from './pages';
-import { HeaderComponent } from './ui';
+import {
+  AppComponent,
+  LoginComponent,
+ DashboardComponent
+} from './pages';
+import {
+  HeaderComponent,
+  UploadPanelComponent,
+  ButtonComponent
+} from './ui';
 import { AuthGuard } from './guards';
 import { AuthService } from './services';
 
@@ -25,7 +33,9 @@ firebase.initializeApp(firebaseConfig);
     AppComponent,
     HeaderComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    UploadPanelComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,

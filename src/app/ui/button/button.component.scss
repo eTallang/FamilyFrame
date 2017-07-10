@@ -1,0 +1,25 @@
+@import '../../../styles/shadow.scss';
+@import '../../../styles/animation.scss';
+
+$button-background: #7c59a9;
+// $button-background: #37457c;
+
+button {
+    width: 100%;
+    border: none;
+    background: $button-background;
+    border-radius: 2px;
+    padding: 14px;
+    color: white;
+    box-shadow: $shadow-close;
+    transition: $animation-short;
+    font-weight: 300;
+    font-size: 1rem;
+    font-family: "Raleway", sans-serif;
+}
+
+button:focus {
+    outline: none;
+    background: darken($button-background, 10%);
+    box-shadow: $shadow-medium;
+}

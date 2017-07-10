@@ -1,0 +1,44 @@
+@import '../shadow.scss';
+@import '../animation.scss';
+
+$input-background: #116c68;
+// $input-background: #058a84;
+
+input {
+    box-shadow: $shadow-close;
+    border-radius: 2px;
+    background: $input-background;
+    color: white;
+    border: none;
+    padding: 10px;
+    transition: $animation-short;
+    font-family: "Raleway", sans-serif;
+    font-weight: 300;
+}
+
+input:-moz-placeholder {
+    color: white;
+    opacity: 0.6;    
+}
+
+input:-ms-input-placeholder {
+    color: white;
+    opacity: 0.6;    
+}
+
+input::-moz-placeholder {
+    color: white;
+    opacity: 0.6;    
+}
+
+input::-webkit-input-placeholder {
+    color: white;
+    opacity: 0.6;
+}
+
+input:focus {
+    outline: none;
+    color: white;
+    background: lighten($input-background, 5%);
+    box-shadow: $shadow-medium;
+}
