@@ -23,3 +23,7 @@ button:focus {
     background: darken($button-background, 10%);
     box-shadow: $shadow-medium;
 }
+
+button:hover {
+    cursor: pointer;
+}

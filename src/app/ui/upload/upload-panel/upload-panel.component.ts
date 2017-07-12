@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./upload-panel.component.scss']
 })
 export class UploadPanelComponent implements OnInit {
-
+  photos: File[] = [];
   constructor() { }
 
   ngOnInit() {

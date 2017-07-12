@@ -8,8 +8,8 @@
     #loginForm="ngForm"
     (ngSubmit)="signIn()">
     <p fxFlexAlign="center">Sign in to begin your journey...</p>
-    <input type="email" placeholder="Username" spellcheck="false" required [(ngModel)]="username" name="email">
-    <input type="password" placeholder="Password" required [(ngModel)]="password" name="password">
+    <input ff-input type="email" placeholder="Username" spellcheck="false" required [(ngModel)]="username" name="email">
+    <input ff-input type="password" placeholder="Password" required [(ngModel)]="password" name="password">
     <ff-button type="submit" *ngIf="loginForm.form.valid">Sign in</ff-button>
   </form>
   <div fxFlex></div>

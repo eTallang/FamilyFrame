@@ -13,7 +13,9 @@ import {
 import {
   HeaderComponent,
   UploadPanelComponent,
-  ButtonComponent
+  ButtonComponent,
+  UploadButtonComponent,
+  InputComponent
 } from './ui';
 import { AuthGuard } from './guards';
 import { AuthService } from './services';
@@ -35,7 +37,9 @@ firebase.initializeApp(firebaseConfig);
     LoginComponent,
     DashboardComponent,
     UploadPanelComponent,
-    ButtonComponent
+    ButtonComponent,
+    UploadButtonComponent,
+    InputComponent
   ],
   imports: [
     BrowserModule,
