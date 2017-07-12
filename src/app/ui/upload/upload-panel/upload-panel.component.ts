@@ -1,15 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'ff-upload-panel',
   templateUrl: './upload-panel.component.html',
   styleUrls: ['./upload-panel.component.scss']
 })
-export class UploadPanelComponent implements OnInit {
-  photos: File[] = [];
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class UploadPanelComponent {
+  photos: File[];
 }

@@ -1,0 +1,35 @@
+@import '../../../../styles/shadow.scss';
+
+$font-color: #333;
+
+.card {
+    background: white;
+    border-radius: 2px;
+    box-shadow: $shadow-close;
+    color: $font-color;
+    padding: 24px;
+
+    .header h1 {
+        font-size: 1.6rem;
+        font-weight: 300;
+        margin: 10px 0 20px 0;
+    }
+
+    .divider {
+        display: block;
+        height: 1px;
+        width: 40px;
+        background: $font-color;
+        margin-bottom: 20px;
+    }
+
+    .footer {
+        margin: -16px;
+        margin-top: 20px;
+    }
+}
+
+.cancel-button {
+    background-color: #666;
+    margin-right: 10px;
+}

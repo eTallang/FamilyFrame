@@ -4,12 +4,11 @@
 $button-background: #7c59a9;
 // $button-background: #37457c;
 
-button {
-    width: 100%;
+.ff-button {
     border: none;
     background: $button-background;
     border-radius: 2px;
-    padding: 14px 20px;
+    padding: 14px 24px;
     color: white;
     box-shadow: $shadow-close;
     transition: $animation-short;
@@ -18,12 +17,12 @@ button {
     font-family: "Raleway", sans-serif;
 }
 
-button:focus {
+.ff-button:focus {
     outline: none;
     background: darken($button-background, 10%);
     box-shadow: $shadow-medium;
 }
 
-button:hover {
+.ff-button:hover {
     cursor: pointer;
 }

@@ -1,1 +1,4 @@
+<div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="20px">
 <ff-upload-button (onSelection)="photos = $event"></ff-upload-button>
+<ff-upload-card [photos]="photos" *ngIf="photos"></ff-upload-card>
+</div>

@@ -1,10 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'ff-button',
+  selector: 'button[ff-button]',
+  styleUrls: ['./button.component.scss'],
+  host: { 'class': 'ff-button' },
   templateUrl: './button.component.html',
-  styleUrls: ['./button.component.scss']
+  encapsulation: ViewEncapsulation.None
 })
-export class ButtonComponent {
-  @Input() type = 'text';
-}
+export class ButtonComponent { }

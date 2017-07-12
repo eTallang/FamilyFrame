@@ -1,5 +1,4 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import * as firebase from 'firebase';
@@ -15,10 +14,13 @@ import {
   UploadPanelComponent,
   ButtonComponent,
   UploadButtonComponent,
-  InputComponent
+  InputComponent,
+  UploadCardComponent,
+  UploadProgressComponent
 } from './ui';
 import { AuthGuard } from './guards';
 import { AuthService } from './services';
+import { FfMaterialDesignModule } from './modules';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyC9TlSpdgVpu9MaBLmw_iHxfw0CQw46pNc',
@@ -39,13 +41,15 @@ firebase.initializeApp(firebaseConfig);
     UploadPanelComponent,
     ButtonComponent,
     UploadButtonComponent,
-    InputComponent
+    InputComponent,
+    UploadCardComponent,
+    UploadProgressComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FlexLayoutModule,
-    FormsModule
+    FormsModule,
+    FfMaterialDesignModule
   ],
   providers: [
     AuthGuard,

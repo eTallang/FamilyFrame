@@ -1,0 +1,18 @@
+<div class="card" fxLayout="column" fxFlex.xs="100%" fxFlex-sm="400px" fxFlex.md="600px" fxFlex.gt-md="700px">
+  <div class="header" fxFlexAlign="center">
+    <h1>
+      Selected images
+    </h1>
+  </div>
+  <div class="divider" fxFlexAlign="center"></div>
+  <div class="content">
+    <ff-upload-progress *ngFor="let photo of photos" [picture]="photo"></ff-upload-progress>
+  </div>
+  <div class="footer">
+    <div fxFlex></div>
+    <button ff-button class="cancel-button">Cancel</button>
+    <button ff-button>
+      Upload
+    </button>
+  </div>
+</div>
