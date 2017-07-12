@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'ff-upload-card',
@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class UploadCardComponent implements OnInit {
   @Input() photos: File[] = [];
+  @Output() cancelled = new EventEmitter();
   state: string;
 
   ngOnInit() {
@@ -23,5 +24,10 @@ export class UploadCardComponent implements OnInit {
 
   isPaused(): boolean {
     return this.state === 'pause';
+  }
+
+  cancelUpload() {
+    this.state = 'cancelled';
+    this.cancelled.emit();
   }
 }

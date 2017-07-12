@@ -4,4 +4,11 @@
 
 p {
     font-size: 0.7rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
+
+.upload-row {
+    margin-bottom: 10px;
 }

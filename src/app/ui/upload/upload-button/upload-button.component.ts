@@ -10,7 +10,6 @@ export class UploadButtonComponent {
 
   photosChanged(element: any) {
     const selectedFiles: File[] = element.srcElement.files;
-    console.log(selectedFiles);
     this.onSelection.emit(selectedFiles);
   }
 }

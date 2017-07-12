@@ -7,4 +7,13 @@ import { Component, Input } from '@angular/core';
 })
 export class UploadProgressComponent {
   @Input() picture: File;
+  @Input() mode: string;
+
+  get progressBarMode() {
+    if (this.mode === 'uploading') {
+      return 'indeterminate';
+    } else {
+      return 'none';
+    }
+  }
 }

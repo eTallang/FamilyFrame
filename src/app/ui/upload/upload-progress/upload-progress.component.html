@@ -1,4 +1,4 @@
-<div fxLayout="row">
-  <p fxFlex="100px">{{ picture.name }}</p>  
-  <md-progress-bar class="upload-bar" fxFlex mode="indeterminate"></md-progress-bar>
+<div fxLayout="row" class="upload-row">
+  <p fxFlex="160px">{{ picture.name }}</p>  
+  <md-progress-bar class="upload-bar" fxFlex [mode]="progressBarMode"></md-progress-bar>
 </div>
