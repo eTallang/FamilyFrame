@@ -10,9 +10,13 @@
   </div>
   <div class="footer">
     <div fxFlex></div>
-    <button ff-button class="cancel-button">Cancel</button>
-    <button ff-button>
-      Upload
+    <button ff-button class="gray-button">Cancel</button>
+    <button ff-button (click)="toggleState()">
+      <span *ngIf="isPaused(); else pauseTemplate">Upload</span>
     </button>
   </div>
 </div>
+
+<ng-template #pauseTemplate>
+  <span>Pause</span>
+</ng-template>

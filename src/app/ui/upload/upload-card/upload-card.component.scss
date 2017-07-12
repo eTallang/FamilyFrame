@@ -29,7 +29,11 @@ $font-color: #333;
     }
 }
 
-.cancel-button {
+.gray-button {
     background-color: #666;
     margin-right: 10px;
+}
+
+.gray-button:focus {
+    background-color: #444;
 }
