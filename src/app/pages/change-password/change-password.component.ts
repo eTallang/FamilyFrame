@@ -10,6 +10,8 @@ import { AuthService } from '../../services';
 export class ChangePasswordComponent {
   password: string;
   validationMessage: string;
+  passwordIsVisible = false;
+  type = 'password';
 
   constructor(private authService: AuthService) { }
 
@@ -19,5 +21,15 @@ export class ChangePasswordComponent {
     .catch(error => {
       this.validationMessage = error.message;
     });
+  }
+
+  toggleShowPassword() {
+    if (this.passwordIsVisible) {
+      this.passwordIsVisible = false;
+      this.type = 'password';
+    } else {
+      this.passwordIsVisible = true;
+      this.type = 'text';
+    }
   }
 }
