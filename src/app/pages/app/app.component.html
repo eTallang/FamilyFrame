@@ -1,4 +1,4 @@
-<a (click)="signOut()" *ngIf="isSignedIn">Log out</a>
+<a (click)="signOut()" *ngIf="authService.isSignedIn">Log out</a>
 <ff-header></ff-header>
 <div class="content">
     <router-outlet></router-outlet>

@@ -11,16 +11,20 @@ import { AuthService } from '../../services';
 export class LoginComponent {
   username: string;
   password: string;
+  validationMessage: string;
+  signingIn = false;
 
   constructor(private authService: AuthService, private router: Router) { }
 
   signIn() {
+    this.signingIn = true;
     this.authService.signIn(this.username, this.password)
     .then(result => {
-      console.log('Right username and password!');
+      this.signingIn = false;
       this.router.navigate(['']);
     }).catch(error => {
-      console.log('TODO... Wrong username or password!');
+      this.signingIn = false;
+      this.validationMessage = error.message;
     });
   }
 }

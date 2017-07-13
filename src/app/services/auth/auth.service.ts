@@ -4,7 +4,7 @@ import * as firebase from 'firebase';
 
 @Injectable()
 export class AuthService {
-  isSignedIn = false;
+  isSignedIn = true;
 
   constructor(private router: Router) {
     this.observeUserState();

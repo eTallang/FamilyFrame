@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 
+import { PictureService } from '../../../services';
+
 @Component({
   selector: 'ff-upload-progress',
   templateUrl: './upload-progress.component.html',
@@ -7,14 +9,16 @@ import { Component, Input } from '@angular/core';
 })
 export class UploadProgressComponent {
   @Input() picture: File;
-  @Input() mode: string;
-  progress: number;
-
-  get progressBarMode() {
-    if (this.mode === 'uploading') {
-      return 'indeterminate';
-    } else {
-      return 'none';
+  @Input()
+  set mode(state: string) {
+    if (state === 'uploading') {
+      this.pictureService.uploadPicture(this.picture)
+      .subscribe(progress => this.progress = progress);
+      this.progressBarMode = 'determinate';
     }
   }
+  progressBarMode = 'none';
+  progress: number;
+
+  constructor(private pictureService: PictureService) { }
 }

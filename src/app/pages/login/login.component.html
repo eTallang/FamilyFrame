@@ -11,6 +11,8 @@
     <input ff-input type="email" placeholder="Username" spellcheck="false" required [(ngModel)]="username" name="email">
     <input ff-input type="password" placeholder="Password" required [(ngModel)]="password" name="password">
     <button ff-button type="submit" *ngIf="loginForm.form.valid">Sign in</button>
+    <md-progress-bar mode="indeterminate" *ngIf="signingIn"></md-progress-bar>
+    <p fxFlexAlign="center">{{ validationMessage }}</p>
   </form>
   <div fxFlex></div>
 </div>

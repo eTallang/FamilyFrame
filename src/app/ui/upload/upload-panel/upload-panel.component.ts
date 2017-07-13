@@ -9,11 +9,11 @@ import { trigger, state, transition, style, animate } from '@angular/animations'
     trigger('flyInOut', [
       state('in', style({ transform: 'translateY(0)', opacity: 1 })),
       transition('void => *', [
-        style({ transform: 'translateY(-40px)', opacity: 0 }),
+        style({ transform: 'translateY(-30px)', opacity: 0 }),
         animate('400ms cubic-bezier(0.0, 0.0, 0.2, 1)')
       ]),
       transition('* => void', [
-        animate('400ms cubic-bezier(0.4, 0.0, 1, 1)', style({ transform: 'translateY(-40px)', opacity: 0 }))
+        animate('400ms cubic-bezier(0.4, 0.0, 1, 1)', style({ transform: 'translateY(-30px)', opacity: 0 }))
       ])
     ])
   ]

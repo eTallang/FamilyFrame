@@ -19,7 +19,9 @@ import {
   UploadProgressComponent
 } from './ui';
 import { AuthGuard } from './guards';
-import { AuthService } from './services';
+import {
+  AuthService,
+  PictureService } from './services';
 import { FfMaterialDesignModule } from './modules';
 
 export const firebaseConfig = {
@@ -53,7 +55,8 @@ firebase.initializeApp(firebaseConfig);
   ],
   providers: [
     AuthGuard,
-    AuthService
+    AuthService,
+    PictureService
   ],
   bootstrap: [AppComponent]
 })
