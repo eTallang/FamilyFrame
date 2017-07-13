@@ -1,4 +1,8 @@
-<a (click)="signOut()" *ngIf="authService.isSignedIn">Log out</a>
+<div fxLayout="row" class="top-row" *ngIf="authService.isSignedIn">
+    <a (click)="goToChangePassword()">Change password</a>
+    <div class="horizontal-line"></div>
+    <a (click)="signOut()">Log out</a>
+</div>
 <ff-header></ff-header>
 <div class="content">
     <router-outlet></router-outlet>

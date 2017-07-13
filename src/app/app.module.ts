@@ -7,7 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import {
   AppComponent,
   LoginComponent,
- DashboardComponent
+  DashboardComponent,
+  ChangePasswordComponent
 } from './pages';
 import {
   HeaderComponent,
@@ -45,7 +46,8 @@ firebase.initializeApp(firebaseConfig);
     UploadButtonComponent,
     InputComponent,
     UploadCardComponent,
-    UploadProgressComponent
+    UploadProgressComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,

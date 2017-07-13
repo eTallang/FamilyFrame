@@ -19,6 +19,11 @@ export class AuthService {
     this.router.navigate(['/login']);
   }
 
+  changePassword(newPassword: string) {
+    const currentUser = firebase.auth().currentUser;
+    return currentUser.updatePassword(newPassword);
+  }
+
   observeUserState() {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
