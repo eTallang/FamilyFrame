@@ -13,7 +13,7 @@ import { trigger, state, transition, style, animate } from '@angular/animations'
         animate('400ms cubic-bezier(0.0, 0.0, 0.2, 1)')
       ]),
       transition('* => void', [
-        animate('400ms cubic-bezier(0.4, 0.0, 1, 1)', style({ transform: 'translateY(-30px)', opacity: 0 }))
+        animate(0, style({ transform: 'translateY(-30px)', opacity: 0 }))
       ])
     ])
   ]

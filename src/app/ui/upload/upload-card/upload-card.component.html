@@ -6,7 +6,7 @@
   </div>
   <div class="divider" fxFlexAlign="center"></div>
   <div class="content">
-    <ff-upload-progress *ngFor="let photo of photos" [picture]="photo" [mode]="state"></ff-upload-progress>
+    <ff-upload-progress *ngFor="let photo of photos" [picture]="photo" [mode]="state" (finished)="pictureUploaded()"></ff-upload-progress>
   </div>
   <div class="footer">
     <div fxFlex></div>

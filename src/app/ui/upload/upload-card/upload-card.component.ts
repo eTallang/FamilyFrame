@@ -8,6 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class UploadCardComponent implements OnInit {
   @Input() photos: File[] = [];
   @Output() cancelled = new EventEmitter();
+  numberOfUploadedPictures = 0;
   state: string;
 
   ngOnInit() {
@@ -29,5 +30,15 @@ export class UploadCardComponent implements OnInit {
   cancelUpload() {
     this.state = 'cancelled';
     this.cancelled.emit();
+  }
+
+  pictureUploaded() {
+    this.numberOfUploadedPictures++;
+    if (this.numberOfUploadedPictures === this.photos.length) {
+      const that = this;
+      setTimeout(function() {
+        that.cancelUpload();
+      }, 2000);
+    }
   }
 }

@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import * as firebase from 'firebase';
 
 import { PictureService } from '../../../services';
 
@@ -9,17 +10,39 @@ import { PictureService } from '../../../services';
 })
 export class UploadProgressComponent {
   @Input() picture: File;
-  @Input()
-  set mode(state: string) {
+  @Input() set mode(state: string) {
     if (state === 'uploading') {
-      this.pictureService.uploadPicture(this.picture)
-      .subscribe(progress => this.progress = progress);
+      if (!this.pictureRef) {
+        this.pictureRef = this.pictureService.uploadPicture(this.picture);
+        this.monitorUploadProgress();
+      } else {
+        this.pictureRef.resume();
+      }
       this.progressBarMode = 'determinate';
-    } else if (state === 'pause') {
+    } else if (state === 'pause' && this.pictureRef) {
+      this.pictureRef.pause();
+    } else if (state === 'cancelled') {
+      this.pictureRef.cancel();
     }
   }
+  @Output() finished = new EventEmitter();
+  pictureRef: any;
   progressBarMode = 'none';
   progress: number;
 
   constructor(private pictureService: PictureService) { }
+
+  monitorUploadProgress() {
+    const that = this;
+    this.pictureRef.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
+      function (snapshot) {
+        const percent = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        that.progress = percent;
+        if (percent === 100) {
+          that.finished.emit();
+        }
+      }, function (error) {
+        that.mode = 'none';
+      });
+  }
 }
