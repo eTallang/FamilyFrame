@@ -18,7 +18,6 @@ export class UploadProgressComponent {
       } else {
         this.pictureRef.resume();
       }
-      this.progressBarMode = 'determinate';
     } else if (state === 'pause' && this.pictureRef) {
       this.pictureRef.pause();
     } else if (state === 'cancelled') {
@@ -27,8 +26,7 @@ export class UploadProgressComponent {
   }
   @Output() finished = new EventEmitter();
   pictureRef: any;
-  progressBarMode = 'none';
-  progress: number;
+  progress = 0;
 
   constructor(private pictureService: PictureService) { }
 
@@ -42,7 +40,7 @@ export class UploadProgressComponent {
           that.finished.emit();
         }
       }, function (error) {
-        that.mode = 'none';
+        that.progress = 0;
       });
   }
 }
