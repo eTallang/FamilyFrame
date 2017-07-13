@@ -15,6 +15,7 @@ export class UploadProgressComponent {
       this.pictureService.uploadPicture(this.picture)
       .subscribe(progress => this.progress = progress);
       this.progressBarMode = 'determinate';
+    } else if (state === 'pause') {
     }
   }
   progressBarMode = 'none';
