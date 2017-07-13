@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
 export class UploadProgressComponent {
   @Input() picture: File;
   @Input() mode: string;
+  progress: number;
 
   get progressBarMode() {
     if (this.mode === 'uploading') {
