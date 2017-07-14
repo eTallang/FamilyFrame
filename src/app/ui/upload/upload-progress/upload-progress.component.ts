@@ -36,11 +36,13 @@ export class UploadProgressComponent {
       function (snapshot) {
         const percent = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         that.progress = percent;
-        if (percent === 100) {
-          that.finished.emit();
-        }
       }, function (error) {
         that.progress = 0;
+      }, function () {
+        const name = that.pictureRef.snapshot.metadata.name;
+        const url = that.pictureRef.snapshot.downloadURL;
+        that.pictureService.addPictureToDatabase(name, url);
+        that.finished.emit();
       });
   }
 }
