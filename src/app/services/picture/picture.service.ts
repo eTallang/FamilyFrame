@@ -29,7 +29,7 @@ export class PictureService {
     });
   }
 
-  getPictures(): Observable<string> {
+  getPictures(): Observable<string[]> {
     return new Observable(observer => {
       this.databaseRef.ref('pictures')
       .on('value', function (snapshot) {

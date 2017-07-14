@@ -5,3 +5,4 @@ export { UploadButtonComponent } from './upload/upload-button/upload-button.comp
 export { InputComponent } from './input/input.component';
 export { UploadCardComponent } from './upload/upload-card/upload-card.component';
 export { UploadProgressComponent } from './upload/upload-progress/upload-progress.component';
+export { PictureListComponent } from './picture-list/picture-list.component';
