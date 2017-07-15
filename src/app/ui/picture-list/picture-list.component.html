@@ -1,1 +1,2 @@
 <img *ngFor="let picture of pictures" [src]="picture.url">
+<md-progress-bar mode="indeterminate" *ngIf="!pictures"></md-progress-bar>

@@ -3,6 +3,8 @@ import * as firebase from 'firebase';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 
+import { Picture } from '../../interfaces';
+
 @Injectable()
 export class PictureService {
   storageRef;
@@ -29,13 +31,28 @@ export class PictureService {
     });
   }
 
-  getPictures(): Observable<string[]> {
+  getPictures(): Observable<Picture[]> {
+    const that = this;
     return new Observable(observer => {
       this.databaseRef.ref('pictures')
-      .on('value', function (snapshot) {
-        observer.next(snapshot.val());
-      });
+        .on('value', function (snapshot) {
+          const pictures = that.mapObjectToArray(snapshot.val());
+          observer.next(pictures);
+        });
     })
+  }
+
+  mapObjectToArray(object: any): Picture[] {
+    const newArray: Picture[] = [];
+    for (const key of Object.keys(object)) {
+      const url = object[key].url;
+      newArray.push({
+        name: key,
+        url: url
+      });
+    }
+
+    return newArray;
   }
 
   removeFileEnding(filename: string): string {

@@ -1,11 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef} from '@angular/core';
 
 import { PictureService } from '../../services';
-
-interface Picture {
-  name: string;
-  url: string;
-}
+import { Picture } from '../../interfaces';
 
 @Component({
   selector: 'ff-picture-list',
@@ -13,21 +9,15 @@ interface Picture {
   styleUrls: ['./picture-list.component.scss']
 })
 export class PictureListComponent implements OnInit {
-  pictures: Picture[] = [];
+  pictures: Picture[];
 
-  constructor(private pictureService: PictureService) { }
+  constructor(private pictureService: PictureService, private changeDetectorRef: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.pictureService.getPictures()
-      .subscribe(pictureRoot => {
-        this.pictures = [];
-        for (const key of Object.keys(pictureRoot)) {
-          const url = pictureRoot[key].url;
-          this.pictures.push({
-            name: key,
-            url: url
-          });
-        }
+      .subscribe(pictures => {
+        this.pictures = pictures;
+        this.changeDetectorRef.detectChanges();
       });
   }
 }
