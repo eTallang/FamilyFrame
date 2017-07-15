@@ -18,7 +18,8 @@ import {
   InputComponent,
   UploadCardComponent,
   UploadProgressComponent,
-  PictureListComponent
+  PictureListComponent,
+  PictureThumbnailComponent
 } from './ui';
 import { AuthGuard } from './guards';
 import {
@@ -49,7 +50,8 @@ firebase.initializeApp(firebaseConfig);
     UploadCardComponent,
     UploadProgressComponent,
     ChangePasswordComponent,
-    PictureListComponent
+    PictureListComponent,
+    PictureThumbnailComponent
   ],
   imports: [
     BrowserModule,

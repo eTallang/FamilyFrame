@@ -1,4 +1,4 @@
-<div fxLayout="row" fxLayoutGap="10px" fxLayoutWrap [@listAnimation]="pictures.length">
-<img *ngFor="let picture of pictures" [src]="picture.url">
+<div fxLayout="row" fxLayoutGap="5px" fxLayoutWrap [@listAnimation]="pictures.length">
+    <ff-picture-thumbnail  *ngFor="let picture of pictures" [picture]="picture"></ff-picture-thumbnail>
 </div>
-<md-progress-bar mode="indeterminate" *ngIf="!pictures"></md-progress-bar>
+<md-progress-bar mode="indeterminate" *ngIf="pictures.length === 0"></md-progress-bar>
