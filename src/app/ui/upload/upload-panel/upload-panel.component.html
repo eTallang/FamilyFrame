@@ -1,4 +1,4 @@
 <div fxLayout="column" fxLayoutGap="20px">
-    <ff-upload-button *ngIf="!photos" (onSelection)="setPhotos($event)" fxFlexAlign="center"></ff-upload-button>
-    <ff-upload-card [photos]="photos" *ngIf="photos" (cancelled)="clearPhotos()" [@flyInOut]="photos"></ff-upload-card>
+    <ff-upload-button *ngIf="showButton" (onSelection)="setPhotos($event)" fxFlexAlign="center"></ff-upload-button>
+    <ff-upload-card [photos]="photos" *ngIf="photos" (cancelled)="clearPhotos()" [@flyInOut]="photos" style="overflow: hidden"></ff-upload-card>
 </div>
