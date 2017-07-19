@@ -18,6 +18,7 @@ export class LoginComponent {
 
   signIn() {
     this.signingIn = true;
+    this.validationMessage = '';
     this.authService.signIn(this.username, this.password)
     .then(result => {
       this.signingIn = false;
