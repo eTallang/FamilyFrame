@@ -26,6 +26,7 @@ import {
   AuthService,
   PictureService } from './services';
 import { FfMaterialDesignModule } from './modules';
+import { ButtonSpinnerDirective } from './directives';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyC9TlSpdgVpu9MaBLmw_iHxfw0CQw46pNc',
@@ -51,7 +52,8 @@ firebase.initializeApp(firebaseConfig);
     UploadProgressComponent,
     ChangePasswordComponent,
     PictureListComponent,
-    PictureThumbnailComponent
+    PictureThumbnailComponent,
+    ButtonSpinnerDirective
   ],
   imports: [
     BrowserModule,
