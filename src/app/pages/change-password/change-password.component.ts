@@ -11,14 +11,20 @@ export class ChangePasswordComponent {
   password: string;
   validationMessage: string;
   passwordIsVisible = false;
+  changingPassword = false;
   type = 'password';
 
   constructor(private authService: AuthService) { }
 
   changePassword() {
+    this.changingPassword = true;
     this.authService.changePassword(this.password)
-    .then(response => this.validationMessage = 'Your password has been updated.')
+    .then(response => {
+      this.validationMessage = 'Your password has been updated.';
+      this.changingPassword = false;
+    })
     .catch(error => {
+      this.changingPassword = false;
       this.validationMessage = error.message;
     });
   }
