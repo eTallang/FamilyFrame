@@ -1,6 +1,6 @@
-<div fxLayout="row" fxLayoutAlign="center start" fxLayoutGap="5px" fxLayoutWrap [@listAnimation]="pictures.length">
+<div fxLayout="row" fxLayoutAlign="center start" fxLayoutGap="5px" fxLayoutWrap [@listAnimation]="pictures">
     <ff-picture-thumbnail  *ngFor="let picture of pictures" [picture]="picture"></ff-picture-thumbnail>
 </div>
-<div fxLayoutAlign="center center" *ngIf="pictures.length === 0">
+<div fxLayoutAlign="center center" *ngIf="!pictures">
     <md-progress-spinner mode="indeterminate" strokeWidth="4" color="accent"></md-progress-spinner>
 </div>

@@ -24,7 +24,9 @@ import {
 import { AuthGuard } from './guards';
 import {
   AuthService,
-  PictureService } from './services';
+  PictureService,
+  ResizeService
+} from './services';
 import { FfMaterialDesignModule } from './modules';
 import { ButtonSpinnerDirective } from './directives';
 
@@ -64,7 +66,8 @@ firebase.initializeApp(firebaseConfig);
   providers: [
     AuthGuard,
     AuthService,
-    PictureService
+    PictureService,
+    ResizeService
   ],
   bootstrap: [AppComponent]
 })

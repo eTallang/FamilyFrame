@@ -4,13 +4,14 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 
 import { Picture } from '../../interfaces';
+import { ResizeService } from '../resize/resize.service';
 
 @Injectable()
 export class PictureService {
   storageRef;
   databaseRef;
 
-  constructor() {
+  constructor(private resizeService: ResizeService) {
     this.storageRef = firebase.storage().ref();
     this.databaseRef = firebase.database();
   }
@@ -25,7 +26,6 @@ export class PictureService {
 
   addPictureToDatabase(fileName: string, url: string) {
     const name = this.removeFileEnding(fileName);
-    console.log(name);
     this.databaseRef.ref('pictures/' + name).set({
       url: url
     });
@@ -43,6 +43,10 @@ export class PictureService {
   }
 
   mapObjectToArray(object: any): Picture[] {
+    if (!object) {
+      return [];
+    }
+
     const newArray: Picture[] = [];
     for (const key of Object.keys(object)) {
       const url = object[key].url;
