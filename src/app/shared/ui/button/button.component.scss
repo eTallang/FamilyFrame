@@ -1,0 +1,34 @@
+@import '../../../../styles/shadow.scss';
+@import '../../../../styles/animation.scss';
+
+$button-background: #7c59a9;
+$button-disabled-background: #777;
+// $button-background: #37457c;
+
+.ff-button {
+    border: none;
+    background: $button-background;
+    border-radius: 2px;
+    padding: 14px 24px;
+    color: white;
+    box-shadow: $shadow-close;
+    transition: $animation-short;
+    font-weight: 300;
+    font-size: 0.9rem;
+    font-family: "Raleway", sans-serif;
+}
+
+.ff-button:focus {
+    outline: none;
+    background: darken($button-background, 10%);
+    box-shadow: $shadow-medium;
+}
+
+.ff-button:hover {
+    cursor: pointer;
+}
+
+.ff-button:disabled {
+    background: $button-disabled-background;
+    cursor: not-allowed;
+}

@@ -1,30 +1,27 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import {
-  LoginComponent,
-  DashboardComponent,
-  ChangePasswordComponent } from './pages';
-import { AuthGuard } from './guards';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+
+import { AuthGuard } from './core';
 
 const routes: Routes = [
   {
     path: '',
-    component: DashboardComponent,
+    loadChildren: 'app/dashboard/dashboard.module.ts#DashboardModule',
     canActivate: [ AuthGuard ]
   },
   {
     path: 'change-password',
-    component: ChangePasswordComponent,
+    loadChildren: 'app/change-password/change-password.module.ts#ChangePasswordModule',
     canActivate: [ AuthGuard ]
   },
   {
     path: 'login',
-    component: LoginComponent
+    loadChildren: 'app/login/login.module.ts#LoginModule',
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
