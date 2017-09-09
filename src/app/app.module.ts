@@ -10,6 +10,9 @@ import { AppRoutingModule } from './app-routing.module';
     CoreModule,
     AppRoutingModule
   ],
+  declarations: [
+    AppComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

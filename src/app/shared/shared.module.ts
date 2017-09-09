@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { FfMaterialDesignModule } from './ff-material-design.module';
 import { ButtonSpinnerDirective } from './directives';
-import { ButtonComponent, HeaderComponent, InputComponent } from './ui';
+import { ButtonComponent, InputComponent } from './ui';
 
 @NgModule({
   imports: [
@@ -13,7 +13,6 @@ import { ButtonComponent, HeaderComponent, InputComponent } from './ui';
   declarations: [
     ButtonSpinnerDirective,
     ButtonComponent,
-    HeaderComponent,
     InputComponent
   ],
   exports: [
@@ -21,7 +20,6 @@ import { ButtonComponent, HeaderComponent, InputComponent } from './ui';
     FfMaterialDesignModule,
     ButtonSpinnerDirective,
     ButtonComponent,
-    HeaderComponent,
     InputComponent
   ]
 })

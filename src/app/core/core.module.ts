@@ -1,10 +1,13 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import './rxjs-dependencies';
 import * as firebase from 'firebase';
 
 import { AuthService } from './services/index';
 import { AuthGuard } from './guards/index';
+import { HeaderComponent } from './ui/header/header.component';
 
 export const firebaseConfig = {
     apiKey: 'AIzaSyC9TlSpdgVpu9MaBLmw_iHxfw0CQw46pNc',
@@ -17,11 +20,22 @@ export const firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
 @NgModule({
   imports: [
+    CommonModule,
+    FlexLayoutModule,
     BrowserAnimationsModule
+  ],
+  declarations: [
+    HeaderComponent
   ],
   providers: [
     AuthService,
     AuthGuard
+  ],
+  exports: [
+    CommonModule,
+    BrowserAnimationsModule,
+    HeaderComponent,
+    FlexLayoutModule
   ]
 })
 export class CoreModule {
