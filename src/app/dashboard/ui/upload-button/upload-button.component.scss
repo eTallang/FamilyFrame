@@ -1,4 +1,4 @@
-@import '../../../../styles/shadow.scss';
+@import '~@angular/material/theming';
 @import '../../../../styles/animation.scss';
 
 $label-background: #7c59a9;
@@ -10,7 +10,7 @@ input + label {
     border-radius: 2px;
     padding: 14px 20px;
     color: white;
-    box-shadow: $shadow-close;
+    @include mat-elevation(2);
     transition: $animation-short;
     font-weight: 300;
     font-size: 0.9rem;
@@ -25,7 +25,7 @@ input + label * {
 input:focus + label, input + label:hover {
     outline: none;
     background: darken($label-background, 10%);
-    box-shadow: $shadow-medium;
+    @include mat-elevation(6);
 }
 
 input + label {

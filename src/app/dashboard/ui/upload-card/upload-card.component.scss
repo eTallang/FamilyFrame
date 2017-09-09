@@ -1,4 +1,4 @@
-@import '../../../../styles/shadow.scss';
+@import '~@angular/material/theming';
 @import '../../../../styles/animation.scss';
 
 $font-color: #333;
@@ -6,7 +6,7 @@ $font-color: #333;
 .card {
     background: white;
     border-radius: 2px;
-    box-shadow: $shadow-close;
+    @include mat-elevation(2);
     color: $font-color;
     padding: 24px;
 

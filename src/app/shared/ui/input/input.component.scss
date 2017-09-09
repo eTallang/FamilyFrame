@@ -1,4 +1,4 @@
-@import '../../../../styles/shadow.scss';
+@import '~@angular/material/theming';
 @import '../../../../styles/animation.scss';
 
 $input-background: #116c68;
@@ -10,7 +10,7 @@ $input-background: #116c68;
 }
 
 .ff-input {
-    box-shadow: $shadow-close;
+    @include mat-elevation(2);
     border-radius: 2px;
     background: $input-background;
     color: white;
@@ -44,6 +44,6 @@ $input-background: #116c68;
         outline: none;
         color: white;
         background: lighten($input-background, 5%);
-        box-shadow: $shadow-medium;    
+        @include mat-elevation(6);
     }
 }
