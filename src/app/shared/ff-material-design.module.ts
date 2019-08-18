@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MdProgressBarModule, MdProgressSpinnerModule } from '@angular/material';
+import { MatProgressBarModule, MatProgressSpinnerModule } from '@angular/material';
 
 @NgModule({
   imports: [
     FlexLayoutModule,
-    MdProgressBarModule,
-    MdProgressSpinnerModule
+    MatProgressBarModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     FlexLayoutModule,
-    MdProgressBarModule,
-    MdProgressSpinnerModule
+    MatProgressBarModule,
+    MatProgressSpinnerModule
   ]
 })
 export class FfMaterialDesignModule { }

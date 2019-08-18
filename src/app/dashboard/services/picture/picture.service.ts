@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import * as firebase from 'firebase';
+import { storage, database } from 'firebase';
 import { Observable } from 'rxjs/Observable';
 
 import { Picture } from '../../picture';
@@ -11,8 +11,8 @@ export class PictureService {
   databaseRef;
 
   constructor(private resizeService: ResizeService) {
-    this.storageRef = firebase.storage().ref();
-    this.databaseRef = firebase.database();
+    this.storageRef = storage().ref();
+    this.databaseRef = database();
   }
 
   uploadPicture(picture: File) {

@@ -25,7 +25,7 @@ export class ResizeService {
   canvas.height = img.height * ratio;
   const ctx = canvas.getContext('2d');
   ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-  //////////4. export as dataUrl
+  ////////// 4. export as dataUrl
   return canvas.toDataURL();
 }
 

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import './rxjs-dependencies';
-import * as firebase from 'firebase';
+import { initializeApp } from 'firebase';
 
 import { AuthService } from './services/index';
 import { AuthGuard } from './guards/index';
@@ -17,7 +17,7 @@ export const firebaseConfig = {
     storageBucket: 'familyframe-ae4de.appspot.com',
     messagingSenderId: '694625293240'
   };
-  firebase.initializeApp(firebaseConfig);
+  initializeApp(firebaseConfig);
 @NgModule({
   imports: [
     CommonModule,

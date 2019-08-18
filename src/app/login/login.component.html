@@ -5,7 +5,7 @@
     <input ff-input type="email" placeholder="Username" spellcheck="false" required [(ngModel)]="username" name="email">
     <input ff-input type="password" placeholder="Password" required [(ngModel)]="password" name="password">
     <button ff-button type="submit" fxLayout="row" fxLayoutAlign="center center" *ngIf="loginForm.form.valid" [disabled]="signingIn">
-      <md-progress-spinner ffButtonSpinner mode="indeterminate" color="accent" *ngIf="signingIn"></md-progress-spinner>
+      <mat-progress-spinner ffButtonSpinner mode="indeterminate" color="accent" *ngIf="signingIn"></mat-progress-spinner>
       Sign in
     </button>
     <p fxFlexAlign="center">{{ validationMessage }}</p>

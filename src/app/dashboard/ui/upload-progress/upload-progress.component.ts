@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import * as firebase from 'firebase';
+import { storage } from 'firebase';
 
 import { PictureService } from '../../services';
 
@@ -32,7 +32,7 @@ export class UploadProgressComponent {
 
   monitorUploadProgress() {
     const that = this;
-    this.pictureRef.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
+    this.pictureRef.on(storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
       function (snapshot) {
         const percent = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         that.progress = percent;
