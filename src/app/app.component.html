@@ -1,0 +1,13 @@
+<div fxLayout="row" class="top-row" *ngIf="authService.isSignedIn">
+    <a (click)="goToChangePassword()">Change password</a>
+    <div class="horizontal-line"></div>
+    <a (click)="signOut()">Log out</a>
+</div>
+<div fxLayout="row">
+    <div fxFlex></div>
+    <ff-header></ff-header>
+    <div fxFlex></div>
+</div>
+<div class="content">
+    <router-outlet></router-outlet>
+</div>

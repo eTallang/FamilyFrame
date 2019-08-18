@@ -1,0 +1,49 @@
+@import '~@angular/material/theming';
+@import '../../../../styles/animation.scss';
+
+$input-background: #116c68;
+// $input-background: #058a84;
+
+.placeholder-style {
+    color: white;
+    opacity: 0.6;
+}
+
+.ff-input {
+    @include mat-elevation(2);
+    border-radius: 2px;
+    background: $input-background;
+    color: white;
+    border: none;
+    padding: 10px;
+    transition: $animation-short;
+    font-family: "Raleway", sans-serif;
+    font-weight: 300;
+
+    &:-moz-placeholder {
+        color: white;
+        opacity: 0.6;
+    }
+
+    &::-moz-placeholder {
+        color: white;
+        opacity: 0.6;
+    }
+
+    &:-ms-input-placeholder {
+        color: white;
+        opacity: 0.6;
+    }
+
+    &::-webkit-input-placeholder {
+        color: white;
+        opacity: 0.6;
+    }
+
+    &:focus {
+        outline: none;
+        color: white;
+        background: lighten($input-background, 5%);
+        @include mat-elevation(6);
+    }
+}

@@ -1,0 +1,22 @@
+<div class="card" fxLayout="column">
+  <div class="header" fxFlexAlign="center">
+    <h1>
+      Selected images
+    </h1>
+  </div>
+  <div class="divider" fxFlexAlign="center"></div>
+  <div class="content">
+    <ff-upload-progress *ngFor="let photo of photos" [picture]="photo" [mode]="state" (finished)="pictureUploaded()"></ff-upload-progress>
+  </div>
+  <div class="footer">
+    <div fxFlex></div>
+    <button ff-button class="gray-button" (click)="cancelUpload()">Cancel</button>
+    <button ff-button (click)="toggleState()">
+      <span *ngIf="isPaused(); else pauseTemplate">Upload</span>
+    </button>
+  </div>
+</div>
+
+<ng-template #pauseTemplate>
+  <span>Pause</span>
+</ng-template>

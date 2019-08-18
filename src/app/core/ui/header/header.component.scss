@@ -1,0 +1,37 @@
+$offset: 50px;
+
+header {
+    margin: 60px 10px;
+    user-select: none;
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+}
+
+header:hover {
+    cursor: pointer;
+}
+
+header:focus {
+    outline: none;
+}
+
+h1 {
+    margin-right: $offset;
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+h2 {
+    margin-left: $offset;
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.line {
+    width: 40px;
+    height: 4px;
+    background: white;
+    margin-left: 0px;
+    margin: 0 auto;
+}

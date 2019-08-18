@@ -1,0 +1,40 @@
+@import '~@angular/material/theming';
+@import '../../../../styles/animation.scss';
+
+$font-color: #333;
+
+.card {
+    background: white;
+    border-radius: 2px;
+    @include mat-elevation(2);
+    color: $font-color;
+    padding: 24px;
+
+    .header h1 {
+        font-size: 1.6rem;
+        font-weight: 300;
+        margin: 10px 0 30px 0;
+    }
+
+    .divider {
+        display: block;
+        height: 1px;
+        width: 40px;
+        background: lighten($font-color, 30%);
+        margin-bottom: 30px;
+    }
+
+    .footer {
+        margin: -16px;
+        margin-top: 20px;
+    }
+}
+
+.gray-button {
+    background-color: #666;
+    margin-right: 10px;
+}
+
+.gray-button:focus {
+    background-color: #444;
+}

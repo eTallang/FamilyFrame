@@ -1,0 +1,46 @@
+@import '~@angular/material/theming';
+@import '../../../../styles/animation.scss';
+
+$label-background: #7c59a9;
+// $label-background: #37457c;
+
+input + label {
+    border: none;
+    background: $label-background;
+    border-radius: 2px;
+    padding: 14px 20px;
+    color: white;
+    @include mat-elevation(2);
+    transition: $animation-short;
+    font-weight: 300;
+    font-size: 0.9rem;
+    font-family: "Raleway", sans-serif;
+    display: inline-block;
+}
+
+input + label * {
+    pointer-events: none;
+}
+
+input:focus + label, input + label:hover {
+    outline: none;
+    background: darken($label-background, 10%);
+    @include mat-elevation(6);
+}
+
+input + label {
+    cursor: pointer;
+}
+
+input {
+    width: 0.1px;
+    height: 0.1px;
+    position: absolute;
+    overflow: hidden;
+    opacity: 0;
+    z-index: -1;
+}
+
+i {
+    margin-right: 6px;
+}
